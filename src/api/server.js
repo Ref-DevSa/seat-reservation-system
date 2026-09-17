@@ -9,7 +9,7 @@ const {
   joinWaitlist,
   checkExpiredHolds,
   getSeats
-} = require("../services/reservationService");
+} = require("../rules/reservationRules");
 
 const { getEventLog } = require("../services/eventLogService");
 
