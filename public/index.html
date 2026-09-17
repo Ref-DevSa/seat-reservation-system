@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seat Reservation System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <h1>Seat Reservation System</h1>
+    <p class="subtitle">Melsoft Academy</p>
+
+    <section>
+      <h2>Seat Map</h2>
+      <div id="seats" class="seats"></div>
+    </section>
+
+    <section class="card">
+      <h2>Reserve a Seat</h2>
+
+      <form id="holdForm">
+
+        <label>Email Address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="you@example.com"
+          required
+        >
+
+        <label>Seat Number</label>
+        <input
+          type="number"
+          id="seatNumber"
+          min="1"
+          max="20"
+          required
+        >
+
+        <button type="submit">Place Hold</button>
+
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Manage Hold</h2>
+
+      <input
+        type="email"
+        id="manageEmail"
+        placeholder="Email address"
+      >
+
+      <input
+        type="text"
+        id="holdCode"
+        placeholder="6-character hold code"
+      >
+
+      <div class="actions">
+        <button onclick="extendHold()">Extend</button>
+        <button onclick="confirmHold()">Confirm</button>
+        <button onclick="releaseHold()">Release</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Waitlist</h2>
+
+      <input
+        type="email"
+        id="waitlistEmail"
+        placeholder="Email address"
+      >
+
+      <button onclick="joinWaitlist()">Join Waitlist</button>
+    </section>
+
+    <section class="card">
+      <h2>Event Log</h2>
+      <button onclick="loadEvents()">Refresh Event Log</button>
+      <pre id="events"></pre>
+    </section>
+
+    <p id="message"></p>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
